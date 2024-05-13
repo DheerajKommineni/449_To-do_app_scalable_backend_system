@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      /* Your existing CSS styles */
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      /* Your existing CSS styles */
+
+      /* Style for error message */
+      .error-message {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>WELCOME TO TO-DO APPLICATION</h2>
+
+    <!-- Display error message if any -->
+    {% if error %}
+    <p class="error-message">{{ error }}</p>
+    {% endif %}
+
+    <!-- Login form -->
+    <form method="POST" action="/custom_login">
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required /><br />
+      <label for="password">Password:</label><br />
+      <input type="password" id="password" name="password" required /><br />
+      <button type="submit">Login</button>
+    </form>
+
+    <p>Don't have an account? <a href="/create_user">Create one</a>.</p>
+    <!-- Login with Google button -->
+    <button onclick="window.location.href='/login'">Login with Google</button>
+  </body>
+</html>

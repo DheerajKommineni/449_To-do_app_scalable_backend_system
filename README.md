@@ -32,38 +32,41 @@ Before running the application, ensure you have the following installed:
 
 1. Clone the repository to your local machine:
 
-    ```bash
-    git clone https://github.com/DheerajKommineni/449_To-do_app_scalable_backend_system
-    ```
+   ```bash
+   git clone https://github.com/DheerajKommineni/449_To-do_app_scalable_backend_system
+   ```
 
 2. Navigate to the project directory:
 
-    ```bash
-    cd todo_app
-    ```
+   ```bash
+   cd 449_To-do_app_scalable_backend_system
+   ```
 
 3. Install the required Python packages:
 
-    ```bash
-    pip install -r requirements.txt
-    ```
+   ```bash
+   pip install -r requirements.txt
+   ```
 
 4. Set up the MySQL database:
-    - Create a MySQL database named `todo_db`.
-    - Update the database connection details in `app.py` if necessary.
+
+   - Create a MySQL database named `todo_db`.
+   - Update the database connection details in `app.py` if necessary.
 
 5. Set up the Redis server:
-    - Ensure Redis server is running on `localhost` with default port `6379`.
+
+   - Ensure Redis server is running on `localhost` with default port `6379`.
 
 6. Configure NGINX as a load balancer:
-    - Update NGINX configuration to distribute traffic across multiple instances of the Flask application.
-    - Ensure NGINX is configured to forward requests to the appropriate Flask instances.
+
+   - Update NGINX configuration to distribute traffic across multiple instances of the Flask application.
+   - Ensure NGINX is configured to forward requests to the appropriate Flask instances.
 
 7. Run the application:
 
-    ```bash
-    python app.py
-    ```
+   ```bash
+   python app.py
+   ```
 
 8. Access the application in your web browser at `http://localhost:5001`.
 
@@ -79,9 +82,7 @@ Before running the application, ensure you have the following installed:
   - Email: admin@gmail.com
   - Password: Admin@123
 - Manage user accounts and view user details from the admin dashboard.
-  
 
 ## Contributing
 
 Contributions are welcome! Feel free to open issues or pull requests for any improvements or feature additions.
-

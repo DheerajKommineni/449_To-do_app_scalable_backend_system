@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      /* Your existing CSS styles */
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      /* Your existing CSS styles */
+
+      /* Style for error message */
+      .error-message {
+        color: red;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Create User</h2>
+
+    <!-- Display error message if any -->
+    {% if error %}
+    <p class="error-message">{{ error }}</p>
+    {% endif %}
+
+    <!-- User creation form -->
+    <form method="POST" action="/create_user">
+      <label for="username">Username:</label><br />
+      <input type="text" id="username" name="username" required /><br />
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" required /><br />
+      <label for="password">Password:</label><br />
+      <input
+        type="password"
+        id="password"
+        name="password"
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters"
+        required
+      /><br />
+      <button type="submit">Create User</button>
+    </form>
+
+    <!-- Link to login page -->
+    <p>Already have an account? <a href="/custom_login">Login here</a>.</p>
+  </body>
+</html>
