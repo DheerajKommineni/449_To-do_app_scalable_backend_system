@@ -320,6 +320,7 @@ def authorize():
     
     # Store user's email in the session
     session['email'] = user_info.data.get('email')
+    username = session['user_name']
     session['user_name'] = user_info.data.get('name')
 
     # Check if the user exists in the database
@@ -330,7 +331,7 @@ def authorize():
         session['user_id'] = user['id']
     else:
         # User does not exist in the database, create a new user
-        user_id = create_user(email, '')  # You may want to add some default password
+        user_id = create_users(email, 'password', username)  # You may want to add some default password
         session['user_id'] = user_id
 
     return redirect(url_for('index', user_id=session.get('user_id')))
