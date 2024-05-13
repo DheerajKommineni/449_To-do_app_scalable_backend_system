@@ -1,5 +1,7 @@
 # 449_To-do_app_scalable_backend_system
 
+CPSC 449 - WEB BACKEND ENGINEERING
+
 # Task Manager Web Application
 
 This repository contains a Flask-based web application for managing tasks. Users can create, view, update, and delete tasks, with authentication and authorization mechanisms in place.
@@ -15,6 +17,9 @@ The Task Manager Web Application is built using Flask, a lightweight Python web 
 - Session Management: User sessions are maintained using Flask's session management system, allowing users to stay logged in across multiple requests.
 - RESTful API: The application provides RESTful API endpoints for interacting with tasks, allowing integration with other services or front-end applications.
 - Admin Portal: An admin portal is available for administrators to manage user accounts. Administrators can view user accounts from the portal.
+
+Scalabale Strategies:
+
 - Caching: Redis is used as a caching layer to improve performance by caching frequently accessed data.
 - Load Balancing: NGINX is configured as a load balancer to distribute incoming network traffic across multiple servers, improving responsiveness and availability of the application.
 - Distributed Caching: Redis is configured for distributed caching, allowing for the storage and retrieval of cache data across multiple instances of application.
@@ -47,28 +52,30 @@ Before running the application, ensure you have the following installed:
    ```bash
    pip install -r requirements.txt
    ```
+   
+4. Uncomment the app_secret_key and provia a secret
 
-4. Set up the MySQL database:
+5. Set up the MySQL database:
 
-   - Create a MySQL database named `todo_db`.
-   - Update the database connection details in `app.py` if necessary.
+   - Create a MySQL database.
+   - Update the database connection details in `app.py` by uncommenting the connection code and adding your details
 
-5. Set up the Redis server:
+6. Set up the Redis server:
 
    - Ensure Redis server is running on `localhost` with default port `6379`.
 
-6. Configure NGINX as a load balancer:
+7. Configure NGINX as a load balancer:
 
    - Update NGINX configuration to distribute traffic across multiple instances of the Flask application.
    - Ensure NGINX is configured to forward requests to the appropriate Flask instances.
 
-7. Run the application:
+8. Run the application:
 
    ```bash
    python app.py
    ```
 
-8. Access the application in your web browser at `http://localhost:5001`.
+9. Access the application in your web browser at `http://localhost:5001`.
 
 ## Usage
 
@@ -82,6 +89,13 @@ Before running the application, ensure you have the following installed:
   - Email: admin@gmail.com
   - Password: Admin@123
 - Manage user accounts and view user details from the admin dashboard.
+
+## Project Contribution
+
+- Sri Hari Dheeraj Kommineni - Traditional Authentication, OAuth, Other (Frontend & python coding)
+- Hemanth Naidu Karnataka - Caching, Distributed Caching, Other (Frontend & python coding)
+- Sai Sirisha Surapaneni - bcrypt, Load Balancing, Other (Frontend & python coding)
+
 
 ## Contributing
 
