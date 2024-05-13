@@ -33,7 +33,7 @@ Before running the application, ensure you have the following installed:
 1. Clone the repository to your local machine:
 
     ```bash
-    git clone https://github.com/<your-username>/task-manager-web-app.git
+    git clone https://github.com/DheerajKommineni/449_To-do_app_scalable_backend_system
     ```
 
 2. Navigate to the project directory:
