@@ -161,6 +161,7 @@ def get_all_users():
         sql = "SELECT id, username, email FROM users"
         cursor.execute(sql)
         users = cursor.fetchall()
+        print("Retrieving users from the database...")
         return users
     except Exception as e:
         return []
@@ -214,14 +215,12 @@ def index(user_id):
     user_name = session.get('user_name')
     user_id = session.get('user_id')
     print(f"User ID: {user_id}")
-    print("Retrieving tasks from the database...")
     # Check cache first
     cached_tasks = cache.get(f'/tasks/{user_id}')
     if cached_tasks:
         print("Retrieved tasks from cache")
         tasks = cached_tasks
     else:
-        print("Retrieving tasks from the database...")
         tasks = get_tasks(user_id)
         print("Tasks retrieved from the database.")
         cache.set(f'/tasks/{user_id}', tasks)
@@ -320,11 +319,11 @@ def authorize():
     
     # Store user's email in the session
     session['email'] = user_info.data.get('email')
-    username = session['user_name']
     session['user_name'] = user_info.data.get('name')
 
     # Check if the user exists in the database
     email = session['email']
+    username = session['user_name']
     user = get_user(email)
     if user:
         # User exists in the database, retrieve their data
@@ -334,7 +333,7 @@ def authorize():
         user_id = create_users(email, 'password', username)  # You may want to add some default password
         session['user_id'] = user_id
 
-    return redirect(url_for('index', user_id=session.get('user_id')))
+    return redirect(url_for('dashboard', user_id=session.get('user_id')))
 
 
 
