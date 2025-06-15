@@ -1,6 +1,3 @@
-# 449_To-do_app_scalable_backend_system
-
-CPSC 449 - WEB BACKEND ENGINEERING
 
 # Task Manager Web Application
 
